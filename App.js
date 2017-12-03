@@ -1,31 +1,18 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
-import { FormLabel, FormInput, FormValidationMessage, Header} from 'react-native-elements'
+import { Button, FormLabel, FormInput, Header} from 'react-native-elements'
 
 export default class App extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Header
-          style = {styles.header}
-          backgroundColor = '#ff6961'
-          leftComponent={{icon: 'menu', color: '#fff'}}
-          centerComponent={{text: 'BloodHaxs', style: {color: '#fff'}}}
-        />
-        <Image source={require('./assets/logo.png')}/>
+      <View style={{ flex: 1, justifyContent: 'center' }}>
+        <Image style={{ alignSelf: 'center' }} source={require('./assets/logo.png')}/>
+        <FormLabel>E-mail Address</FormLabel>
+        <FormInput />
+        <FormLabel>Password</FormLabel>
+        <FormInput secureTextEntry />
+        <Button title="Submit" backgroundColor="#cd5c5c" />
       </View>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-  },
-  header: {
-    width: '100%',
-    top : '0'
-  }
-});
